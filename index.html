@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Dimon Global Group — Media. One reel a day, every platform, one standard: mental clarity, physical discipline, financial independence, and life's joys." />
+<title>Media — Dimon Global Group</title>
+<style>
+  :root{
+    --bg:#101312; --card:#171a18; --card-2:#1e2220;
+    --ink:#f2f1ec; --soft:#c6c8c0; --muted:#8f9489;
+    --line:#2b2f2c; --green:#57b87e; --green-dim:#1e6b3c; --purple:#a68fd6; --purple-dim:#5b4390;
+    --serif:Georgia, "Times New Roman", serif;
+    --sans:-apple-system, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono:ui-monospace, Menlo, Consolas, monospace;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.55; }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 24px; }
+
+  .topbar{ border-bottom:1px solid var(--line); }
+  .topbar .wrap{ display:flex; justify-content:space-between; align-items:center; gap:16px; padding-top:14px; padding-bottom:14px; }
+  .brand{ font-family:var(--serif); font-weight:600; letter-spacing:.06em; font-size:15px; }
+  .brand .rad{ border:1.5px solid var(--ink); padding:4px 7px 3px; font-size:11px; letter-spacing:.14em; margin-right:10px; }
+  .live{ font-family:var(--mono); font-size:12px; color:var(--muted); }
+  .live .dot{ display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--green); margin-right:7px; }
+
+  .hero{ padding:58px 0 10px; }
+  .hero .kick{ font-family:var(--mono); font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--green); margin:0 0 14px; }
+  .hero h1{ font-family:var(--serif); font-weight:500; font-size:clamp(38px,5.6vw,62px); line-height:1.08; margin:0; }
+  .hero h1 em{ color:var(--purple); }
+  .hero p{ color:var(--soft); font-size:17.5px; max-width:62ch; margin:18px 0 0; }
+  .cadence{ display:flex; flex-wrap:wrap; gap:10px; margin-top:26px; }
+  .cadence span{ font-family:var(--mono); font-size:12px; border:1px solid var(--line); padding:7px 12px; color:var(--soft); background:var(--card); }
+  .cadence span b{ color:var(--green); font-weight:600; }
+
+  .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:44px; }
+  @media (max-width:900px){ .grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:580px){ .grid{ grid-template-columns:1fr; } }
+  .card{ background:var(--card); border:1px solid var(--line); padding:26px 26px 22px; display:flex; flex-direction:column; min-height:210px; transition:border-color .15s ease, transform .15s ease; }
+  a.card:hover{ border-color:var(--green); transform:translateY(-2px); }
+  .card .pl{ display:flex; align-items:center; justify-content:space-between; }
+  .card .glyph{ width:40px; height:40px; border:1.5px solid var(--ink); display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-weight:600; font-size:15px; }
+  .card .fmt{ font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
+  .card h2{ font-family:var(--serif); font-size:22px; font-weight:600; margin:18px 0 2px; }
+  .card .handle{ font-family:var(--mono); font-size:13px; color:var(--green); }
+  .card p{ color:var(--soft); font-size:14px; margin:12px 0 0; flex:1; }
+  .card .go{ font-family:var(--mono); font-size:12px; color:var(--muted); margin-top:16px; }
+  a.card:hover .go{ color:var(--green); }
+  .card.yt .handle{ color:#ff8a80; }
+  .card.tg .handle{ color:#8ec9e8; }
+  .card.gh .handle{ color:var(--purple); }
+  .card.fb .glyph{ color:#9db8e8; border-color:#9db8e8; }
+
+  .creed-band{ margin-top:44px; border:1px solid var(--purple-dim); background:linear-gradient(120deg, var(--card-2), var(--card)); padding:34px 36px; display:grid; grid-template-columns:1.4fr 1fr; gap:30px; align-items:center; }
+  .creed-band blockquote{ margin:0; font-family:var(--serif); font-size:clamp(20px,2.6vw,26px); line-height:1.5; font-style:italic; }
+  .creed-band blockquote b{ font-style:normal; color:var(--green); font-weight:600; }
+  .creed-band .side{ font-size:14.5px; color:var(--soft); }
+  .creed-band .side a{ color:var(--green); text-decoration:underline; }
+  @media (max-width:760px){ .creed-band{ grid-template-columns:1fr; } }
+
+  .stream{ margin-top:44px; }
+  .stream h2{ font-family:var(--mono); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); font-weight:600; margin:0 0 14px; }
+  .stream .row{ display:grid; grid-template-columns:110px 1fr auto; gap:18px; padding:15px 4px; border-top:1px solid var(--line); align-items:baseline; }
+  .stream .row:last-child{ border-bottom:1px solid var(--line); }
+  .stream .when{ font-family:var(--mono); font-size:12px; color:var(--green); }
+  .stream .what{ color:var(--soft); font-size:15px; }
+  .stream .what b{ color:var(--ink); font-weight:600; }
+  .stream .where{ font-family:var(--mono); font-size:11.5px; color:var(--muted); white-space:nowrap; }
+  @media (max-width:640px){ .stream .row{ grid-template-columns:84px 1fr; } .stream .where{ display:none; } }
+
+  .featured{ margin-top:44px; }
+  .featured h2{ font-family:var(--mono); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); font-weight:600; margin:0 0 6px; }
+  .featured .note{ color:var(--muted); font-size:13.5px; margin:0 0 8px; max-width:68ch; }
+  .featured a.row{ display:grid; grid-template-columns:110px 1fr auto; gap:18px; padding:15px 4px; border-top:1px solid var(--line); align-items:baseline; }
+  .featured a.row:last-child{ border-bottom:1px solid var(--line); }
+  .featured .when{ font-family:var(--mono); font-size:12px; color:var(--green); }
+  .featured .what{ color:var(--soft); font-size:15px; }
+  .featured .what b{ color:var(--ink); font-weight:600; }
+  .featured a.row:hover .what b{ color:var(--green); }
+  .featured .where{ font-family:var(--mono); font-size:11.5px; color:#9db8e8; white-space:nowrap; }
+  @media (max-width:640px){ .featured a.row{ grid-template-columns:84px 1fr; } .featured .where{ display:none; } }
+
+  footer{ margin-top:60px; border-top:1px solid var(--line); padding:28px 0 40px; font-size:13px; color:var(--muted); line-height:1.7; }
+  footer .row{ display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; margin-bottom:12px; }
+  footer a{ color:var(--soft); }
+  footer a:hover{ color:var(--green); }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="https://dimonglobalgroup.com"><span class="rad">RAD</span>DIMON GLOBAL GROUP</a>
+    <span class="live"><span class="dot"></span>publishing daily</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="hero">
+    <p class="kick">Dimon Global Group — Media</p>
+    <h1>One reel a day.<br />Every platform. <em>One standard.</em></h1>
+    <p>The founder publishes a short reel every day, cross-posted to every channel below — the working record of the build, in public, as it happens. This page is the hub: every official channel, one tap away, all of it pointing back to the firm.</p>
+    <div class="cadence">
+      <span><b>1</b> reel / day</span>
+      <span><b>7</b> channels</span>
+      <span><b>0</b> days skipped by design</span>
+      <span>theme: clarity · discipline · independence · joy</span>
+    </div>
+  </div>
+
+  <div class="grid">
+    <a class="card" href="https://www.youtube.com/@RobertDonaldson-rad" target="_blank" rel="noopener">
+      <div class="pl"><span class="glyph">YT</span><span class="fmt">Video · Primary</span></div>
+      <h2>YouTube</h2>
+      <div class="handle">@RobertDonaldson-rad</div>
+      <p>The home channel — the daily reel&rsquo;s primary edition and the long-form archive of the build.</p>
+      <span class="go">Watch &rarr;</span>
+    </a>
+
+    <a class="card" href="https://www.instagram.com/thearchitectrad" target="_blank" rel="noopener">
+      <div class="pl"><span class="glyph">IG</span><span class="fmt">Reels · Photos</span></div>
+      <h2>Instagram</h2>
+      <div class="handle">@thearchitectrad</div>
+      <p>The daily reel and the visual record — training, building, and the life around both.</p>
+      <span class="go">Follow &rarr;</span>
+    </a>
+
+    <a class="card" href="https://www.threads.net/@thearchitectrad" target="_blank" rel="noopener">
+      <div class="pl"><span class="glyph">TH</span><span class="fmt">Text · Conversation</span></div>
+      <h2>Threads</h2>
+      <div class="handle">@thearchitectrad</div>
+      <p>Short-form writing and the conversation around each day&rsquo;s reel.</p>
+      <span class="go">Follow &rarr;</span>
+    </a>
+
+    <div class="card fb">
+      <div class="pl"><span class="glyph">FB</span><span class="fmt">Posts · Community</span></div>
+      <h2>Facebook</h2>
+      <div class="handle" style="color:#9db8e8">Robert Donaldson</div>
+      <p>The public profile — daily posts and the longest-running public record of the four.</p>
+      <span class="go">Public profile</span>
+    </div>
+
+    <a class="card tg" href="https://t.me/RAD_Dimon" target="_blank" rel="noopener">
+      <div class="pl"><span class="glyph">TG</span><span class="fmt">Direct · Updates</span></div>
+      <h2>Telegram</h2>
+      <div class="handle">@RAD_Dimon</div>
+      <p>The direct line — updates and contact under the RAD monogram.</p>
+      <span class="go">Message &rarr;</span>
+    </a>
+
+    <a class="card gh" href="https://github.com/DimonGlobalGroup" target="_blank" rel="noopener">
+      <div class="pl"><span class="glyph">GH</span><span class="fmt">Code · Releases</span></div>
+      <h2>GitHub</h2>
+      <div class="handle">DimonGlobalGroup</div>
+      <p>Where the engineering becomes public: the Reverb release line and the Group&rsquo;s published, verified software generations.</p>
+      <span class="go">Browse &rarr;</span>
+    </a>
+  </div>
+
+  <div class="creed-band">
+    <blockquote>&ldquo;Mental clarity. Physical discipline. <b>Financial independence.</b> And life&rsquo;s joys. Let&rsquo;s build.&rdquo;</blockquote>
+    <p class="side">The line carried on every channel, every day. The firm behind it — sectors, portfolio, and the measured record — lives at <a href="https://dimonglobalgroup.com">dimonglobalgroup.com</a>.</p>
+  </div>
+
+  <div class="featured">
+    <h2>Featured broadcasts</h2>
+    <p class="note">The strongest reels from the Facebook record — most-discussed first, per the November 1 audit. Every one opens on Facebook.</p>
+    <a class="row" href="https://facebook.com/reel/1431909434937803/" target="_blank" rel="noopener">
+      <span class="when">OCT 18</span>
+      <span class="what"><b>No Such Thing As A Gold Digger</b> — the most-discussed reel in the record (7 comments).</span>
+      <span class="where">WATCH &rarr;</span>
+    </a>
+    <a class="row" href="https://facebook.com/reel/1045924381835061/" target="_blank" rel="noopener">
+      <span class="when">OCT 20</span>
+      <span class="what"><b>We Know Women Are Crazy</b> — the dating-dynamics lane at full volume (5 comments).</span>
+      <span class="where">WATCH &rarr;</span>
+    </a>
+    <a class="row" href="https://facebook.com/reel/1658741155654955/" target="_blank" rel="noopener">
+      <span class="when">OCT 25</span>
+      <span class="what"><b>Life Needs Substance</b> — the mindset pillar&rsquo;s strongest showing on Facebook (3 comments).</span>
+      <span class="where">WATCH &rarr;</span>
+    </a>
+    <a class="row" href="https://facebook.com/reel/3061608740852150/" target="_blank" rel="noopener">
+      <span class="when">OCT 30</span>
+      <span class="what"><b>Built, Not Bought</b> — the fitness record, and the most substantive discussion thread in the audit.</span>
+      <span class="where">WATCH &rarr;</span>
+    </a>
+    <a class="row" href="https://facebook.com/reel/1012052081916340/" target="_blank" rel="noopener">
+      <span class="when">OCT 31</span>
+      <span class="what"><b>The Reality of Judging and Labeling</b> — the latest entry in the public record.</span>
+      <span class="where">WATCH &rarr;</span>
+    </a>
+  </div>
+
+  <div class="stream">
+    <h2>The cadence</h2>
+    <div class="row">
+      <span class="when">DAILY</span>
+      <span class="what"><b>The reel</b> — one short video on the day&rsquo;s work: a system shipped, a number hit, a lesson priced in.</span>
+      <span class="where">ALL CHANNELS</span>
+    </div>
+    <div class="row">
+      <span class="when">WEEKLY</span>
+      <span class="what"><b>The release</b> — a public software generation from the Reverb line, documented and hash-verified.</span>
+      <span class="where">GITHUB</span>
+    </div>
+    <div class="row">
+      <span class="when">ON RECORD</span>
+      <span class="what"><b>The results</b> — benchmarks and milestones published with their measurements, failures included.</span>
+      <span class="where">THE FIRM SITE</span>
+    </div>
+  </div>
+
+  <footer>
+    <div class="row">
+      <span>DIMON GLOBAL GROUP — MEDIA</span>
+      <span><a href="https://dimonglobalgroup.com">Firm</a> · <a href="https://github.com/DimonGlobalGroup" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.youtube.com/@RobertDonaldson-rad" target="_blank" rel="noopener">YouTube</a> · <a href="https://t.me/RAD_Dimon" target="_blank" rel="noopener">Telegram</a></span>
+    </div>
+    <p>Dimon is the founder&rsquo;s chosen name; legal change in progress. Channels listed here are the founder&rsquo;s official public channels; the Group publishes no personal email address, street address, or telephone number.</p>
+  </footer>
+</div>
+
+</body>
+</html>
