@@ -1,0 +1,27 @@
+{
+  "format": 1,
+  "format_id": "hope-page-catalog/1",
+  "issued_at": "2026-11-03T08:18:25Z",
+  "name": "media-private-catalog",
+  "packages": [
+    {
+      "archive": "pps/objects/f1d4cef4eef13e1a4af0abfcf53057d9d31a6a06e186525650f5e9d7ea6ff585.json",
+      "classification": "P1",
+      "files": [
+        "REFINEMENT.md",
+        "WEBSITE-MESH-DOCTRINE.md"
+      ],
+      "id": "media-pack",
+      "kind": "knowledge",
+      "permissions": [],
+      "sha256": "f1d4cef4eef13e1a4af0abfcf53057d9d31a6a06e186525650f5e9d7ea6ff585",
+      "size": 28382,
+      "version": "1.0.0"
+    }
+  ],
+  "page_id": "media",
+  "predecessor_sha256": null,
+  "profile": "hope-page-server/1",
+  "sequence": 1,
+  "signer": "hub-ed25519-2026-11"
+}

@@ -1,0 +1,14 @@
+{
+  "files": {
+    "index.html": "3cf76ecf02fe6ba12161e1333278ebb8c28aa41fb708bdfe5610e7276d951cb9",
+    "pps/catalog.json": "11b1e6fedee5ac9d1d1ddb41caf6ce76ab3175736a67fbc05904aae8af2d89f1",
+    "pps/objects/f1d4cef4eef13e1a4af0abfcf53057d9d31a6a06e186525650f5e9d7ea6ff585.json": "f1d4cef4eef13e1a4af0abfcf53057d9d31a6a06e186525650f5e9d7ea6ff585"
+  },
+  "format": "hope-page-record/1",
+  "issued_at": "2026-11-03T08:18:25Z",
+  "page_id": "media",
+  "predecessor_sha256": null,
+  "sequence": 1,
+  "signature": "KlcgIYxk985LTbh51vg6ARG9oCrSNSFvmuFIxXufJlU1mvslu/UILdAFaQqlL7BLr8rClEzD5QHO1wCSO48jDg==",
+  "signer": "hub-ed25519-2026-11"
+}
