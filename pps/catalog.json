@@ -1,11 +1,11 @@
 {
   "format": 1,
   "format_id": "hope-page-catalog/1",
-  "issued_at": "2026-11-05T17:14:07Z",
+  "issued_at": "2026-11-05T22:57:18Z",
   "name": "media-private-catalog",
   "packages": [
     {
-      "archive": "pps/objects/adfa4ba215c1d3945f755e95fb850b1aa6a89908b43599f4d4f03b654ae27f79.json",
+      "archive": "pps/objects/d814e37ebd338b53fda4f26726ab15dbee6354489f44f8520ca6415b8350fead.json",
       "classification": "P1",
       "files": [
         "REFINEMENT.md",
@@ -14,14 +14,14 @@
       "id": "media-pack",
       "kind": "knowledge",
       "permissions": [],
-      "sha256": "adfa4ba215c1d3945f755e95fb850b1aa6a89908b43599f4d4f03b654ae27f79",
+      "sha256": "d814e37ebd338b53fda4f26726ab15dbee6354489f44f8520ca6415b8350fead",
       "size": 28382,
       "version": "1.0.0"
     }
   ],
   "page_id": "media",
-  "predecessor_sha256": "ad0a448b1b513534ca86345ca21df63eae6c439f92dbfbe80875f5fe8a271f58",
+  "predecessor_sha256": "70a85f73342973ef931d725f2cf3b33d968bcbccfeec4227c53b53fe7d263ac3",
   "profile": "hope-page-server/1",
-  "sequence": 2,
+  "sequence": 3,
   "signer": "hub-ed25519-2026-11"
 }

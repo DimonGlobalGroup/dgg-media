@@ -141,46 +141,105 @@ img.img-missing{ opacity:0; }
   *,*::before,*::after{ animation:none !important; transition:none !important; }
 }
 /* DGG-COMPONENTS:END */
-/* Shared page parts, same values as the portal */
-.hero{ border-bottom:1px solid var(--line); overflow:hidden; }
-.hero-eyebrow{ color:var(--text-muted); font-size:var(--t-sm); margin-bottom:var(--s-4); }
-.hero-eyebrow a{ color:inherit; text-decoration:none; }
+/* Media page: video-platform channel skin. Page-level only; shared blocks above are untouched. */
+
+/* Tap targets on shared furniture */
+.brand{ min-height:2.75rem; }
+.nav a{ display:inline-flex; align-items:center; min-height:2.75rem; padding-block:0; }
+.foot-nav li{ padding-block:0; }
+.foot-nav a{ display:inline-flex; align-items:center; min-height:2.75rem; }
+
+/* Channel masthead */
+.masthead{ --av:5.5rem; --av-over:2.75rem; border-bottom:1px solid var(--line); }
+.banner{ position:relative; overflow:hidden; background:linear-gradient(100deg, var(--ink-950) 0%, var(--ink-800) 42%, var(--blueprint) 100%); border-bottom:1px solid var(--line-strong); }
+.banner-in{ position:relative; display:flex; justify-content:flex-end; padding-block:var(--s-6) var(--s-4); }
+.rings{ position:absolute; left:calc(var(--gutter) + var(--av) / 2); bottom:0; width:92rem; height:92rem; transform:translate(-50%,50%); pointer-events:none; }
+
+.week{ position:relative; margin:0; width:100%; max-width:27rem; }
+.week ol{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(7,1fr); gap:var(--s-2); }
+.week li{ aspect-ratio:9 / 16; position:relative; border:1px solid var(--bone-500); background:var(--ink-900); animation:day-in .45s ease-out both; }
+.week li:nth-child(even){ transform:translateY(.75rem); }
+.week li:nth-child(1){ background:var(--ink-950); }
+.week li:nth-child(2){ background:var(--purple-700); animation-delay:.07s; }
+.week li:nth-child(3){ background:var(--green-700); animation-delay:.14s; }
+.week li:nth-child(4){ background:var(--ink-800); animation-delay:.21s; }
+.week li:nth-child(5){ background:var(--blueprint); animation-delay:.28s; }
+.week li:nth-child(6){ background:var(--purple-700); animation-delay:.35s; }
+.week li:nth-child(7){ background:var(--green-700); animation-delay:.42s; }
+.week li::after{ content:""; position:absolute; left:50%; top:50%; width:.5rem; height:.5rem; margin:-.25rem 0 0 -.25rem; background:var(--bone-100); transform:rotate(45deg); }
+@keyframes day-in{ from{ opacity:0; } to{ opacity:1; } }
+.week figcaption{ margin-top:var(--s-5); font-family:var(--serif); font-style:italic; font-size:var(--t-sm); color:var(--bone-300); text-align:right; }
+
+.mast-id{ position:relative; display:flex; align-items:flex-start; gap:var(--s-4); margin-top:calc(var(--av-over) * -1); }
+.avatar{ flex:none; display:grid; place-items:center; width:var(--av); height:var(--av); background:var(--ink-900); border:1px solid var(--line-strong); color:var(--bone-100); }
+.avatar .mono-mark{ font-size:var(--t-sm); }
+.mast-name{ min-width:0; padding-top:calc(var(--av-over) + var(--s-1)); }
+.hero-eyebrow{ font-family:var(--serif); font-size:var(--t-md); line-height:1.3; color:var(--text); }
+.hero-eyebrow a{ display:inline-flex; align-items:center; min-height:2.75rem; color:var(--text-soft); text-decoration:none; }
 .hero-eyebrow a:hover{ color:var(--accent); text-decoration:underline; }
-.hero h1{ font-size:var(--t-2xl); font-weight:400; line-height:1.04; letter-spacing:.005em; }
-.hero h1 em{ color:var(--accent-2); }
-.hero-lede{ color:var(--text-soft); max-width:60ch; margin-top:var(--s-4); }
-.hero .btn-row{ margin-top:var(--s-5); }
+
+.mast-grid{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.15fr); gap:var(--s-7); padding-block:var(--s-6); }
+.masthead h1{ font-size:var(--t-2xl); font-weight:400; line-height:1.04; letter-spacing:.005em; }
+.masthead h1 span{ display:block; }
+.masthead h1 em{ color:var(--accent-2); }
+.hero-lede{ color:var(--text-soft); max-width:60ch; }
+.hero-lede + .hero-lede{ margin-top:var(--s-3); }
+.mast-copy .btn-row{ margin-top:var(--s-5); }
+
+.chips{ list-style:none; margin:var(--s-4) 0 0; padding:0; display:flex; flex-wrap:wrap; gap:var(--s-2); }
+.chip{ display:inline-flex; align-items:center; gap:var(--s-2); min-height:2.75rem; padding-inline:var(--s-3); background:var(--surface-raised); border:1px solid var(--line); color:var(--text-soft); font-size:var(--t-sm); text-decoration:none; }
+.chip:hover{ border-color:var(--accent); color:var(--accent); }
+.chip .mono-mark{ font-size:.6875rem; padding:.1875rem .3125rem .125rem; }
+
 .hero-strip{ display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); margin:0; }
 .hero-strip > div{ padding:var(--s-4) var(--s-5) var(--s-5); border-left:1px solid var(--line); }
 .hero-strip > div:first-child{ border-left:none; padding-left:0; }
 .hero-strip dt{ color:var(--text-muted); font-size:var(--t-xs); }
 .hero-strip dd{ margin:var(--s-1) 0 0; font-family:var(--serif); font-size:var(--t-md); line-height:1.3; }
-.hero-strip a{ color:inherit; text-decoration:none; }
-.hero-strip a:hover{ color:var(--accent); text-decoration:underline; }
+.hero-strip a{ display:inline-flex; align-items:center; min-height:2.75rem; color:inherit; text-decoration:none; box-shadow:inset 0 -1px 0 var(--accent-2); }
+.hero-strip a:hover{ color:var(--accent); }
+
+.tabs{ display:flex; gap:var(--s-6); border-top:1px solid var(--line); }
+.tabs a{ display:inline-flex; align-items:center; min-height:3rem; color:var(--text-soft); font-size:var(--t-sm); font-weight:600; text-decoration:none; }
+.tabs a:hover{ color:var(--text); box-shadow:inset 0 -2px 0 var(--accent); }
+
 .band{ padding-block:var(--s-8); }
-.sec-intro{ color:var(--text-soft); max-width:68ch; margin-bottom:var(--s-6); }
 .status{ display:inline-flex; align-items:center; gap:var(--s-2); font-size:var(--t-sm); color:var(--text-soft); }
 .status::before{ content:""; width:.5rem; height:.5rem; }
 .status-live::before{ background:var(--accent); }
-.status-dev::before{ border:1.5px solid var(--accent-2); }
-@media (max-width:48rem){
-  .hero-strip{ grid-template-columns:1fr 1fr; }
-  .hero-strip > div{ padding:var(--s-3) var(--s-4) var(--s-4); }
-  .hero-strip > div:nth-child(odd){ border-left:none; padding-left:0; }
-  .hero-strip > div:nth-child(n+3){ border-top:1px solid var(--line); }
-}
-/* Media page */
-.hero-grid{ display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); gap:var(--s-7); align-items:center; padding-block:var(--s-7) var(--s-6); }
-.hero-status{ margin-bottom:var(--s-4); }
-.hero h1 span{ display:block; }
 
-.week{ margin:0; justify-self:end; width:100%; max-width:24rem; }
-.week ol{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(7,1fr); gap:var(--s-2); }
-.week li{ aspect-ratio:9 / 16; border:1px solid var(--line-strong); background:var(--surface-raised); position:relative; }
-.week li:nth-child(even){ transform:translateY(.75rem); }
-.week li::after{ content:""; position:absolute; left:50%; top:50%; width:.5rem; height:.5rem; margin:-.25rem 0 0 -.25rem; background:var(--accent); transform:rotate(45deg); }
-.week figcaption{ margin-top:var(--s-5); font-family:var(--serif); font-style:italic; font-size:var(--t-sm); color:var(--text-muted); }
+/* Featured broadcast and video grid */
+.reels{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:var(--s-4); }
+.reels > li{ display:flex; min-width:0; }
+.reels > li:first-child{ grid-column:1 / -1; }
+.reel{ display:flex; flex-direction:column; width:100%; background:var(--surface-raised); border:1px solid var(--line); color:var(--text); text-decoration:none; }
+.reel:hover{ border-color:var(--accent); }
+.reel:hover .watch{ background:var(--green-600); border-color:var(--green-600); color:#fff; }
+.tile{ position:relative; display:block; flex:none; overflow:hidden; aspect-ratio:9 / 14; background:var(--ink-950); }
+.tile svg{ position:absolute; inset:0; display:block; width:100%; height:100%; }
+.tile::after{ content:""; position:absolute; inset:40% 0 0; background:linear-gradient(to bottom, transparent, rgba(11,14,12,.9) 62%); }
+.tile-two{ background:var(--purple-700); }
+.tile-three{ background:var(--green-700); }
+.tile-four{ background:var(--ink-800); }
+.tile-five{ background:var(--blueprint); }
+.tile-date{ position:absolute; z-index:1; left:var(--s-4); bottom:var(--s-2); display:flex; align-items:baseline; gap:var(--s-2); font-family:var(--serif); color:var(--bone-100); font-size:var(--t-md); line-height:1; }
+.tile-date b{ font-size:clamp(3.25rem, 2.6rem + 2vw, 4.5rem); font-weight:400; }
+.reel-copy{ display:flex; flex:1; flex-direction:column; align-items:flex-start; padding:var(--s-4); min-width:0; }
+.reel h3{ font-size:var(--t-md); line-height:1.25; }
+.reel-desc{ display:block; flex:1; margin-top:var(--s-2); color:var(--text-soft); font-size:var(--t-sm); }
+.watch{ display:inline-flex; align-items:center; gap:var(--s-2); margin-top:var(--s-4); }
+.watch::before{ content:""; width:0; height:0; border-block:.375rem solid transparent; border-left:.625rem solid currentColor; }
 
+.reel-lead{ display:grid; grid-template-columns:minmax(0,1.7fr) minmax(0,1fr); border-color:var(--line-strong); }
+.reel-lead .tile{ aspect-ratio:16 / 9; }
+.reel-lead .tile-date{ left:var(--s-5); bottom:var(--s-4); }
+.reel-lead .tile-date b{ font-size:clamp(4.5rem, 3rem + 5vw, 7.5rem); }
+.reel-lead .reel-copy{ justify-content:center; padding:var(--s-6); }
+.reel-lead h3{ font-size:var(--t-xl); line-height:1.15; }
+.reel-lead .reel-desc{ flex:none; margin-top:var(--s-3); font-size:var(--t-base); }
+.reel-lead .watch{ margin-top:var(--s-5); }
+
+/* Channel directory */
 .ch-grid{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--s-4); }
 .ch-grid > li{ display:flex; }
 .ch{ display:flex; flex-direction:column; width:100%; padding:var(--s-5); background:var(--surface-raised); border:1px solid var(--line); color:var(--text); text-decoration:none; }
@@ -192,60 +251,86 @@ a.ch:hover{ border-color:var(--accent); }
 .ch p{ color:var(--text-soft); font-size:var(--t-sm); margin-top:var(--s-3); flex:1; }
 .ch-go{ font-size:var(--t-sm); font-weight:600; margin-top:var(--s-4); }
 a.ch .ch-go{ color:var(--accent); }
-span.ch-go{ color:var(--text-muted); font-weight:400; }
+div.ch .ch-go{ color:var(--text-muted); font-weight:400; }
 
 .also{ display:grid; grid-template-columns:minmax(0,1fr) auto; gap:var(--s-2) var(--s-6); align-items:baseline; margin-top:var(--s-5); padding-top:var(--s-4); border-top:1px solid var(--line); }
 .also h3{ font-family:var(--sans); font-size:var(--t-sm); font-weight:600; color:var(--text-muted); grid-column:1; }
 .also ul{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:var(--s-1) var(--s-5); font-family:var(--serif); font-size:var(--t-md); grid-column:1; }
 .also p{ color:var(--text-muted); font-size:var(--t-xs); grid-column:2; grid-row:1 / span 2; align-self:center; max-width:24ch; }
 
-.recs{ margin:0; padding:0; list-style:none; border-bottom:1px solid var(--line); }
-.rec{ display:grid; grid-template-columns:6.5rem minmax(0,1fr) auto; gap:var(--s-5); align-items:baseline; padding-block:var(--s-4); border-top:1px solid var(--line); color:var(--text); text-decoration:none; }
-.rec-when{ font-family:var(--mono); font-size:var(--t-xs); color:var(--accent); }
-.rec-what{ color:var(--text-soft); }
+/* Channel routine strip */
+.routine{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); background:var(--surface-raised); border:1px solid var(--line-strong); }
+.rec{ display:flex; flex-direction:column; padding:var(--s-5); border-left:1px solid var(--line); }
+.rec:first-child{ border-left:none; }
+.beat{ display:grid; grid-template-columns:repeat(7,1fr); gap:3px; height:.625rem; margin-bottom:var(--s-4); }
+.beat i{ border:1px solid var(--line-strong); }
+.beat i.on{ background:var(--accent); border-color:var(--accent); }
+.rec-when{ font-family:var(--serif); font-size:var(--t-lg); line-height:1.2; color:var(--accent); }
+.rec-what{ flex:1; margin-top:var(--s-3); color:var(--text-soft); }
 .rec-what b{ display:block; font-family:var(--serif); font-size:var(--t-md); font-weight:600; color:var(--text); line-height:1.3; }
-.rec-where{ font-size:var(--t-xs); color:var(--text-muted); white-space:nowrap; }
-a.rec:hover .rec-what b,a.rec:hover .rec-where{ color:var(--accent); }
-a.rec .rec-where{ color:var(--accent); font-weight:600; font-size:var(--t-sm); }
+.rec-where{ margin-top:var(--s-3); font-size:var(--t-sm); color:var(--text-muted); }
 
+/* Media software product band */
 .feature{ display:grid; grid-template-columns:1.3fr 1fr; border:1px solid var(--line-strong); background:var(--surface-raised); }
 .feature-copy{ padding:var(--s-7) var(--s-7) var(--s-6); }
-.feature-copy h3{ font-size:var(--t-xl); font-weight:600; margin-top:var(--s-3); }
+.badge-dev{ display:inline-flex; align-items:center; gap:var(--s-2); padding:.25rem .625rem; border:1px dashed var(--accent-2); color:var(--accent-2); font-size:var(--t-xs); font-weight:600; letter-spacing:.06em; text-transform:uppercase; }
+.feature-copy h3{ font-size:var(--t-xl); font-weight:600; margin-top:var(--s-4); }
 .feature-copy .sub{ font-family:var(--serif); font-style:italic; color:var(--text-muted); font-size:var(--t-md); margin:var(--s-1) 0 var(--s-4); }
 .feature-copy p:not(.sub){ color:var(--text-soft); max-width:60ch; }
 .feature-copy p + p{ margin-top:var(--s-4); }
-.feature-side{ border-left:1px solid var(--line); padding:var(--s-6); display:flex; flex-direction:column; }
-.feature-side h4{ font-family:var(--sans); font-size:var(--t-sm); font-weight:600; color:var(--text-muted); }
-.libs{ list-style:none; margin:var(--s-3) 0 0; padding:0; flex:1; }
-.libs li{ display:flex; align-items:baseline; gap:var(--s-4); padding-block:var(--s-3); border-top:1px solid var(--line); font-family:var(--serif); font-size:var(--t-lg); line-height:1.2; }
-.libs li span{ font-family:var(--mono); font-size:var(--t-xs); color:var(--text-muted); }
-.feature-side .more{ font-size:var(--t-sm); color:var(--text-soft); margin-top:var(--s-4); padding-top:var(--s-3); border-top:1px solid var(--line); }
+.feature-side{ display:flex; flex-direction:column; padding:var(--s-6); color:var(--blueprint-text); background-color:var(--blueprint); background-image:linear-gradient(rgba(219,230,238,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(219,230,238,.08) 1px, transparent 1px); background-size:1.5rem 1.5rem; }
+.feature-side h4{ font-family:var(--serif); font-size:var(--t-md); font-weight:500; }
+.libs{ list-style:none; flex:1; margin:var(--s-4) 0 0; padding:0; display:grid; grid-template-columns:1fr 1fr; grid-auto-rows:minmax(6rem,1fr); gap:var(--s-3); }
+.libs li{ display:flex; flex-direction:column; justify-content:space-between; padding:var(--s-3); border:1px dashed var(--blueprint-text); font-family:var(--serif); font-size:var(--t-lg); line-height:1.2; }
+.libs li span{ font-family:var(--mono); font-size:var(--t-xs); }
+.feature-side .more{ margin-top:var(--s-4); font-size:var(--t-sm); }
+.feature-side .more a{ display:inline-flex; align-items:center; min-height:2.75rem; color:var(--bone-100); }
 
 .creed{ background:var(--ink-950); border-top:1px solid var(--ink-line); }
 .creed-in{ display:grid; grid-template-columns:auto minmax(0,1.6fr) minmax(0,1fr); gap:var(--s-6); align-items:center; padding-block:var(--s-8); }
 .creed .mono-mark{ font-size:var(--t-md); padding:.75rem .875rem .625rem; }
 .creed blockquote{ margin:0; font-family:var(--serif); font-size:clamp(1.1875rem, 1.05rem + .6vw, 1.5rem); line-height:1.45; }
 .creed .side{ font-size:var(--t-sm); color:var(--text-soft); }
+.creed .side a{ display:inline-flex; align-items:center; min-height:2.75rem; }
 
 @media (max-width:62rem){
-  .hero-grid{ grid-template-columns:1fr; gap:var(--s-6); }
-  .week{ justify-self:start; max-width:22rem; }
+  .mast-grid{ grid-template-columns:1fr; gap:var(--s-5); }
+  .reels{ grid-template-columns:1fr 1fr; }
+  .reel:not(.reel-lead){ flex-direction:row; }
+  .reel:not(.reel-lead) .tile{ width:8.5rem; align-self:stretch; aspect-ratio:auto; min-height:13rem; }
+  .reel:not(.reel-lead) .tile::after{ inset:30% 0 0; }
+  .reel-lead{ display:flex; }
   .ch-grid{ grid-template-columns:1fr 1fr; }
+  .routine{ grid-template-columns:1fr; }
+  .rec{ border-left:none; border-top:1px solid var(--line); }
+  .rec:first-child{ border-top:none; }
   .feature{ grid-template-columns:1fr; }
-  .feature-side{ border-left:none; border-top:1px solid var(--line); }
   .creed-in{ grid-template-columns:1fr; gap:var(--s-4); justify-items:start; }
 }
 @media (max-width:48rem){
   .band{ padding-block:var(--s-7); }
+  .hero-strip{ grid-template-columns:1fr 1fr; }
+  .hero-strip > div{ padding:var(--s-3) var(--s-4) var(--s-4); }
+  .hero-strip > div:nth-child(odd){ border-left:none; padding-left:0; }
+  .hero-strip > div:nth-child(n+3){ border-top:1px solid var(--line); }
   .feature-copy{ padding:var(--s-6) var(--s-5) var(--s-5); }
   .feature-side{ padding:var(--s-5); }
   .also{ grid-template-columns:1fr; }
   .also p{ grid-column:1; grid-row:auto; max-width:none; }
 }
 @media (max-width:40rem){
+  .masthead{ --av:4.5rem; --av-over:1.5rem; }
+  .banner-in{ padding-block:var(--s-5) var(--s-6); }
+  .week{ max-width:15rem; }
+  .week li:nth-child(even){ transform:translateY(.375rem); }
+  .week figcaption{ margin-top:var(--s-4); }
+  .tabs{ display:grid; grid-template-columns:1fr 1fr; gap:0 var(--s-4); }
+  .reels{ grid-template-columns:1fr; }
+  .reel:not(.reel-lead) .tile{ width:7rem; min-height:12rem; }
+  .reel:not(.reel-lead) .tile-date{ left:var(--s-3); flex-direction:column; gap:0; }
+  .reel:not(.reel-lead) .reel-copy{ padding:var(--s-3) var(--s-4); }
+  .reel-lead .reel-copy{ padding:var(--s-4); }
   .ch-grid{ grid-template-columns:1fr; }
-  .rec{ grid-template-columns:4.25rem minmax(0,1fr); gap:var(--s-3); }
-  .rec-where{ grid-column:2; }
 }
 </style>
 </head>
@@ -265,24 +350,41 @@ a.rec .rec-where{ color:var(--accent); font-weight:600; font-size:var(--t-sm); }
     </nav>
   </div>
 </header>
-<div class="hero" id="top">
+<div class="hero masthead" id="top">
+  <div class="banner">
+    <div class="wrap banner-in">
+      <svg class="rings" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false"><g fill="none" stroke-width=".16"><circle cx="100" cy="100" r="3.6" stroke="var(--purple-300)" stroke-opacity="0.599"/><circle cx="100" cy="100" r="7.2" stroke="var(--purple-300)" stroke-opacity="0.578"/><circle cx="100" cy="100" r="10.8" stroke="var(--purple-300)" stroke-opacity="0.557"/><circle cx="100" cy="100" r="14.4" stroke="var(--purple-300)" stroke-opacity="0.536"/><circle cx="100" cy="100" r="18.0" stroke="var(--green-300)" stroke-opacity="0.515"/><circle cx="100" cy="100" r="21.6" stroke="var(--purple-300)" stroke-opacity="0.494"/><circle cx="100" cy="100" r="25.2" stroke="var(--purple-300)" stroke-opacity="0.473"/><circle cx="100" cy="100" r="28.8" stroke="var(--purple-300)" stroke-opacity="0.452"/><circle cx="100" cy="100" r="32.4" stroke="var(--purple-300)" stroke-opacity="0.431"/><circle cx="100" cy="100" r="36.0" stroke="var(--green-300)" stroke-opacity="0.41"/><circle cx="100" cy="100" r="39.6" stroke="var(--purple-300)" stroke-opacity="0.389"/><circle cx="100" cy="100" r="43.2" stroke="var(--purple-300)" stroke-opacity="0.368"/><circle cx="100" cy="100" r="46.8" stroke="var(--purple-300)" stroke-opacity="0.347"/><circle cx="100" cy="100" r="50.4" stroke="var(--purple-300)" stroke-opacity="0.326"/><circle cx="100" cy="100" r="54.0" stroke="var(--green-300)" stroke-opacity="0.305"/><circle cx="100" cy="100" r="57.6" stroke="var(--purple-300)" stroke-opacity="0.284"/><circle cx="100" cy="100" r="61.2" stroke="var(--purple-300)" stroke-opacity="0.263"/><circle cx="100" cy="100" r="64.8" stroke="var(--purple-300)" stroke-opacity="0.242"/><circle cx="100" cy="100" r="68.4" stroke="var(--purple-300)" stroke-opacity="0.221"/><circle cx="100" cy="100" r="72.0" stroke="var(--green-300)" stroke-opacity="0.2"/><circle cx="100" cy="100" r="75.6" stroke="var(--purple-300)" stroke-opacity="0.179"/><circle cx="100" cy="100" r="79.2" stroke="var(--purple-300)" stroke-opacity="0.158"/><circle cx="100" cy="100" r="82.8" stroke="var(--purple-300)" stroke-opacity="0.137"/><circle cx="100" cy="100" r="86.4" stroke="var(--purple-300)" stroke-opacity="0.116"/><circle cx="100" cy="100" r="90.0" stroke="var(--green-300)" stroke-opacity="0.095"/><circle cx="100" cy="100" r="93.6" stroke="var(--purple-300)" stroke-opacity="0.074"/></g></svg>
+      <figure class="week">
+        <ol aria-hidden="true"><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ol>
+        <figcaption>One short reel, every day of the week.</figcaption>
+      </figure>
+    </div>
+  </div>
   <div class="wrap">
-    <div class="hero-grid">
-      <div>
+    <div class="mast-id">
+      <span class="avatar" aria-hidden="true"><span class="mono-mark">RAD</span></span>
+      <div class="mast-name">
         <p class="hero-eyebrow"><a href="https://dimonglobalgroup.com/">Dimon Global Group</a> / Media</p>
         <p class="hero-status"><span class="status status-live">Publishing daily</span></p>
-        <h1><span>One reel a day.</span><span>Every platform.</span><span><em>One standard.</em></span></h1>
+      </div>
+    </div>
+    <div class="mast-grid">
+      <h1><span>One reel a day.</span><span>Every platform.</span><span><em>One standard.</em></span></h1>
+      <div class="mast-copy">
         <p class="hero-lede">The founder publishes a short reel every day, cross-posted across the channels below: the working record of the build, in public, as it happens. This page is the hub, with every official channel one tap away and all of it pointing back to the firm.</p>
         <p class="hero-lede">He is also building media software: a media-center system in development, inspired by XBMC.</p>
         <div class="btn-row">
           <a class="btn btn-solid" href="#channels">The channels</a>
           <a class="btn" href="#media-software">The media-center system</a>
         </div>
+        <ul class="chips" aria-label="Channel links">
+            <li><a class="chip" href="https://www.youtube.com/@RobertDonaldson-rad" target="_blank" rel="noopener"><span class="mono-mark" aria-hidden="true">YT</span>YouTube</a></li>
+            <li><a class="chip" href="https://www.instagram.com/thearchitectrad" target="_blank" rel="noopener"><span class="mono-mark" aria-hidden="true">IG</span>Instagram</a></li>
+            <li><a class="chip" href="https://www.threads.net/@thearchitectrad" target="_blank" rel="noopener"><span class="mono-mark" aria-hidden="true">TH</span>Threads</a></li>
+            <li><a class="chip" href="https://t.me/RAD_Dimon" target="_blank" rel="noopener"><span class="mono-mark" aria-hidden="true">TG</span>Telegram</a></li>
+            <li><a class="chip" href="https://github.com/DimonGlobalGroup" target="_blank" rel="noopener"><span class="mono-mark" aria-hidden="true">GH</span>GitHub</a></li>
+        </ul>
       </div>
-      <figure class="week">
-        <ol aria-hidden="true"><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ol>
-        <figcaption>One short reel, every day of the week.</figcaption>
-      </figure>
     </div>
     <dl class="hero-strip" aria-label="Publishing cadence">
       <div><dt>Reels</dt><dd>1 per day</dd></div>
@@ -290,10 +392,67 @@ a.rec .rec-where{ color:var(--accent); font-weight:600; font-size:var(--t-sm); }
       <div><dt>Theme</dt><dd>Clarity, discipline, independence, joy</dd></div>
       <div><dt>In development</dt><dd><a href="#media-software">Media-center system</a></dd></div>
     </dl>
+    <nav class="tabs" aria-label="On this page">
+      <a href="#featured">Featured broadcasts</a>
+      <a href="#channels">Channels</a>
+      <a href="#cadence">The cadence</a>
+      <a href="#media-software">Media software</a>
+    </nav>
   </div>
 </div>
 
 <main id="main">
+  <section id="featured" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Featured broadcasts</h2>
+        <p>The strongest reels from the Facebook record, most-discussed first, per the November 1 audit. Every one opens on Facebook.</p>
+      </div>
+      <ul class="reels">
+        <li><a class="reel reel-lead" href="https://facebook.com/reel/1431909434937803/" target="_blank" rel="noopener">
+          <span class="tile tile-lead"><svg viewBox="0 0 640 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><g fill="none" stroke-width="1.5"><circle cx="470" cy="150" r="27" stroke="var(--purple-300)" stroke-opacity="0.878"/><circle cx="470" cy="150" r="54" stroke="var(--purple-300)" stroke-opacity="0.836"/><circle cx="470" cy="150" r="81" stroke="var(--purple-300)" stroke-opacity="0.794"/><circle cx="470" cy="150" r="108" stroke="var(--green-300)" stroke-opacity="0.752"/><circle cx="470" cy="150" r="135" stroke="var(--purple-300)" stroke-opacity="0.71"/><circle cx="470" cy="150" r="162" stroke="var(--purple-300)" stroke-opacity="0.668"/><circle cx="470" cy="150" r="189" stroke="var(--purple-300)" stroke-opacity="0.626"/><circle cx="470" cy="150" r="216" stroke="var(--green-300)" stroke-opacity="0.584"/><circle cx="470" cy="150" r="243" stroke="var(--purple-300)" stroke-opacity="0.542"/><circle cx="470" cy="150" r="270" stroke="var(--purple-300)" stroke-opacity="0.5"/><circle cx="470" cy="150" r="297" stroke="var(--purple-300)" stroke-opacity="0.458"/><circle cx="470" cy="150" r="324" stroke="var(--green-300)" stroke-opacity="0.416"/><circle cx="470" cy="150" r="351" stroke="var(--purple-300)" stroke-opacity="0.374"/><circle cx="470" cy="150" r="378" stroke="var(--purple-300)" stroke-opacity="0.332"/><circle cx="470" cy="150" r="405" stroke="var(--purple-300)" stroke-opacity="0.29"/><circle cx="470" cy="150" r="432" stroke="var(--green-300)" stroke-opacity="0.248"/><circle cx="470" cy="150" r="459" stroke="var(--purple-300)" stroke-opacity="0.206"/><circle cx="470" cy="150" r="486" stroke="var(--purple-300)" stroke-opacity="0.164"/></g><rect x="460" y="140" width="20" height="20" fill="var(--green-300)" transform="rotate(45 470 150)"/></svg><span class="tile-date"><span>Oct</span> <b>18</b></span></span>
+          <div class="reel-copy">
+            <h3>No Such Thing As A Gold Digger</h3>
+            <span class="reel-desc">The most-discussed reel in the record (7 comments).</span>
+            <span class="btn btn-solid watch">Watch</span>
+          </div>
+        </a></li>
+        <li><a class="reel" href="https://facebook.com/reel/1045924381835061/" target="_blank" rel="noopener">
+          <span class="tile tile-two"><svg viewBox="0 0 180 280" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><g fill="none" stroke-width="1" stroke-opacity=".62"><circle cx="62" cy="86" r="8" stroke="var(--bone-100)"/><circle cx="62" cy="86" r="16" stroke="var(--bone-100)"/><circle cx="62" cy="86" r="24" stroke="var(--bone-100)"/><circle cx="62" cy="86" r="32" stroke="var(--bone-100)"/><circle cx="62" cy="86" r="40" stroke="var(--bone-100)"/><circle cx="62" cy="86" r="48" stroke="var(--bone-100)"/><circle cx="62" cy="86" r="56" stroke="var(--bone-100)"/><circle cx="62" cy="86" r="64" stroke="var(--bone-100)"/><circle cx="62" cy="86" r="72" stroke="var(--bone-100)"/><circle cx="62" cy="86" r="80" stroke="var(--bone-100)"/><circle cx="62" cy="86" r="88" stroke="var(--bone-100)"/><circle cx="62" cy="86" r="96" stroke="var(--bone-100)"/><circle cx="62" cy="86" r="104" stroke="var(--bone-100)"/><circle cx="62" cy="86" r="112" stroke="var(--bone-100)"/><circle cx="62" cy="86" r="120" stroke="var(--bone-100)"/><circle cx="62" cy="86" r="128" stroke="var(--bone-100)"/><circle cx="118" cy="130" r="8" stroke="var(--purple-300)"/><circle cx="118" cy="130" r="16" stroke="var(--purple-300)"/><circle cx="118" cy="130" r="24" stroke="var(--purple-300)"/><circle cx="118" cy="130" r="32" stroke="var(--purple-300)"/><circle cx="118" cy="130" r="40" stroke="var(--purple-300)"/><circle cx="118" cy="130" r="48" stroke="var(--purple-300)"/><circle cx="118" cy="130" r="56" stroke="var(--purple-300)"/><circle cx="118" cy="130" r="64" stroke="var(--purple-300)"/><circle cx="118" cy="130" r="72" stroke="var(--purple-300)"/><circle cx="118" cy="130" r="80" stroke="var(--purple-300)"/><circle cx="118" cy="130" r="88" stroke="var(--purple-300)"/><circle cx="118" cy="130" r="96" stroke="var(--purple-300)"/><circle cx="118" cy="130" r="104" stroke="var(--purple-300)"/><circle cx="118" cy="130" r="112" stroke="var(--purple-300)"/><circle cx="118" cy="130" r="120" stroke="var(--purple-300)"/><circle cx="118" cy="130" r="128" stroke="var(--purple-300)"/></g></svg><span class="tile-date"><span>Oct</span> <b>20</b></span></span>
+          <div class="reel-copy">
+            <h3>We Know Women Are Crazy</h3>
+            <span class="reel-desc">The dating-dynamics lane (5 comments).</span>
+            <span class="btn btn-solid watch">Watch</span>
+          </div>
+        </a></li>
+        <li><a class="reel" href="https://facebook.com/reel/1658741155654955/" target="_blank" rel="noopener">
+          <span class="tile tile-three"><svg viewBox="0 0 180 280" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><g fill="var(--green-300)" fill-opacity=".78"><rect x="0" y="16.0" width="180" height="2.0"/><rect x="0" y="25.0" width="180" height="2.6"/><rect x="0" y="34.6" width="180" height="3.3"/><rect x="0" y="44.8" width="180" height="4.2"/><rect x="0" y="56.0" width="180" height="5.4"/><rect x="0" y="68.4" width="180" height="6.9"/><rect x="0" y="82.3" width="180" height="8.8"/><rect x="0" y="98.1" width="180" height="11.3"/><rect x="0" y="116.3" width="180" height="14.4"/><rect x="0" y="137.7" width="180" height="18.4"/><rect x="0" y="163.2" width="180" height="23.6"/><rect x="0" y="193.8" width="180" height="30.2"/></g></svg><span class="tile-date"><span>Oct</span> <b>25</b></span></span>
+          <div class="reel-copy">
+            <h3>Life Needs Substance</h3>
+            <span class="reel-desc">The mindset pillar&rsquo;s strongest showing on Facebook (3 comments).</span>
+            <span class="btn btn-solid watch">Watch</span>
+          </div>
+        </a></li>
+        <li><a class="reel" href="https://facebook.com/reel/3061608740852150/" target="_blank" rel="noopener">
+          <span class="tile tile-four"><svg viewBox="0 0 180 280" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect x="112" y="252" width="31" height="17" fill="var(--green-300)" fill-opacity=".95"/><rect x="146" y="252" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="95" y="232" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="129" y="232" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="163" y="232" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="44" y="212" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="78" y="212" width="31" height="17" fill="var(--green-300)" fill-opacity=".95"/><rect x="112" y="212" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="146" y="212" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="27" y="192" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="61" y="192" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="95" y="192" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="129" y="192" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="163" y="192" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="-24" y="172" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="10" y="172" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="44" y="172" width="31" height="17" fill="var(--green-300)" fill-opacity=".95"/><rect x="78" y="172" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="112" y="172" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="146" y="172" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="-7" y="152" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="27" y="152" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="61" y="152" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="95" y="152" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="129" y="152" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="163" y="152" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="-24" y="132" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="10" y="132" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="44" y="132" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="78" y="132" width="31" height="17" fill="var(--green-300)" fill-opacity=".95"/><rect x="112" y="132" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="146" y="132" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="-7" y="112" width="31" height="17" fill="var(--green-300)" fill-opacity=".95"/><rect x="27" y="112" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="61" y="112" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="95" y="112" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="129" y="112" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="163" y="112" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="-24" y="92" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="10" y="92" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="44" y="92" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="78" y="92" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="112" y="92" width="31" height="17" fill="var(--green-300)" fill-opacity=".95"/><rect x="146" y="92" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="-7" y="72" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="27" y="72" width="31" height="17" fill="var(--green-300)" fill-opacity=".95"/><rect x="61" y="72" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="95" y="72" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="129" y="72" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="163" y="72" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="-24" y="52" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="10" y="52" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="44" y="52" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="78" y="52" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="112" y="52" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="146" y="52" width="31" height="17" fill="var(--green-300)" fill-opacity=".95"/><rect x="-7" y="32" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="27" y="32" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="61" y="32" width="31" height="17" fill="var(--green-300)" fill-opacity=".95"/><rect x="95" y="32" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="129" y="32" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="163" y="32" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="-24" y="12" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="10" y="12" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="44" y="12" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="78" y="12" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="112" y="12" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/><rect x="146" y="12" width="31" height="17" fill="var(--bone-500)" fill-opacity=".5"/></svg><span class="tile-date"><span>Oct</span> <b>30</b></span></span>
+          <div class="reel-copy">
+            <h3>Built, Not Bought</h3>
+            <span class="reel-desc">The fitness record, and the most substantive discussion thread in the audit.</span>
+            <span class="btn btn-solid watch">Watch</span>
+          </div>
+        </a></li>
+        <li><a class="reel" href="https://facebook.com/reel/1012052081916340/" target="_blank" rel="noopener">
+          <span class="tile tile-five"><svg viewBox="0 0 180 280" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect x="16.5" y="16.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="55.5" y="16.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="94.5" y="16.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="133" y="16" width="31" height="16" fill="var(--purple-300)"/><rect x="16.5" y="42.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="55" y="42" width="31" height="16" fill="var(--purple-300)"/><rect x="94.5" y="42.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="133.5" y="42.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="16.5" y="68.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="55.5" y="68.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="94.5" y="68.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="133.5" y="68.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="16.5" y="94.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="55.5" y="94.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="94" y="94" width="31" height="16" fill="var(--purple-300)"/><rect x="133.5" y="94.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="16" y="120" width="31" height="16" fill="var(--purple-300)"/><rect x="55.5" y="120.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="94.5" y="120.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="133.5" y="120.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="16.5" y="146.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="55.5" y="146.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="94.5" y="146.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="133.5" y="146.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="16.5" y="172.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="55.5" y="172.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="94.5" y="172.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="133" y="172" width="31" height="16" fill="var(--purple-300)"/><rect x="16.5" y="198.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="55.5" y="198.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="94.5" y="198.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/><rect x="133.5" y="198.5" width="30" height="15" fill="none" stroke="var(--blueprint-text)" stroke-opacity=".55"/></svg><span class="tile-date"><span>Oct</span> <b>31</b></span></span>
+          <div class="reel-copy">
+            <h3>The Reality of Judging and Labeling</h3>
+            <span class="reel-desc">The latest entry at the time of the audit.</span>
+            <span class="btn btn-solid watch">Watch</span>
+          </div>
+        </a></li>
+      </ul>
+    </div>
+  </section>
+
   <section id="channels" class="band">
     <div class="wrap">
       <div class="sec-head">
@@ -357,32 +516,16 @@ a.rec .rec-where{ color:var(--accent); font-weight:600; font-size:var(--t-sm); }
     </div>
   </section>
 
-  <section id="cadence" class="band" style="padding-top:0">
+  <section id="cadence" class="band">
     <div class="wrap">
       <div class="sec-head">
         <h2>The cadence</h2>
         <p>What gets published, how often, and where.</p>
       </div>
-      <ul class="recs">
-        <li class="rec"><span class="rec-when">Daily</span><span class="rec-what"><b>The reel</b>One short video on the day&rsquo;s work: a system shipped, a number hit, a lesson priced in.</span><span class="rec-where">All channels</span></li>
-        <li class="rec"><span class="rec-when">Weekly</span><span class="rec-what"><b>The release</b>A public software generation from the Reverb line, documented and hash-verified.</span><span class="rec-where">GitHub</span></li>
-        <li class="rec"><span class="rec-when">On record</span><span class="rec-what"><b>The results</b>Benchmarks and milestones published with their measurements, failures included.</span><span class="rec-where">The firm site</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="featured" class="band on-paper">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2>Featured broadcasts</h2>
-        <p>The strongest reels from the Facebook record, most-discussed first, per the November 1 audit. Every one opens on Facebook.</p>
-      </div>
-      <ul class="recs">
-        <li><a class="rec" href="https://facebook.com/reel/1431909434937803/" target="_blank" rel="noopener"><span class="rec-when">Oct 18</span><span class="rec-what"><b>No Such Thing As A Gold Digger</b>The most-discussed reel in the record (7 comments).</span><span class="rec-where">Watch</span></a></li>
-        <li><a class="rec" href="https://facebook.com/reel/1045924381835061/" target="_blank" rel="noopener"><span class="rec-when">Oct 20</span><span class="rec-what"><b>We Know Women Are Crazy</b>The dating-dynamics lane (5 comments).</span><span class="rec-where">Watch</span></a></li>
-        <li><a class="rec" href="https://facebook.com/reel/1658741155654955/" target="_blank" rel="noopener"><span class="rec-when">Oct 25</span><span class="rec-what"><b>Life Needs Substance</b>The mindset pillar&rsquo;s strongest showing on Facebook (3 comments).</span><span class="rec-where">Watch</span></a></li>
-        <li><a class="rec" href="https://facebook.com/reel/3061608740852150/" target="_blank" rel="noopener"><span class="rec-when">Oct 30</span><span class="rec-what"><b>Built, Not Bought</b>The fitness record, and the most substantive discussion thread in the audit.</span><span class="rec-where">Watch</span></a></li>
-        <li><a class="rec" href="https://facebook.com/reel/1012052081916340/" target="_blank" rel="noopener"><span class="rec-when">Oct 31</span><span class="rec-what"><b>The Reality of Judging and Labeling</b>The latest entry at the time of the audit.</span><span class="rec-where">Watch</span></a></li>
+      <ul class="routine">
+        <li class="rec"><span class="beat" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="rec-when">Daily</span><span class="rec-what"><b>The reel</b>One short video on the day&rsquo;s work: a system shipped, a number hit, a lesson priced in.</span><span class="rec-where">All channels</span></li>
+        <li class="rec"><span class="beat" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="rec-when">Weekly</span><span class="rec-what"><b>The release</b>A public software generation from the Reverb line, documented and hash-verified.</span><span class="rec-where">GitHub</span></li>
+        <li class="rec"><span class="beat" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="rec-when">On record</span><span class="rec-what"><b>The results</b>Benchmarks and milestones published with their measurements, failures included.</span><span class="rec-where">The firm site</span></li>
       </ul>
     </div>
   </section>
@@ -395,7 +538,7 @@ a.rec .rec-where{ color:var(--accent); font-weight:600; font-size:var(--t-sm); }
       </div>
       <div class="feature">
         <div class="feature-copy">
-          <span class="status status-dev">In development</span>
+          <span class="badge-dev">In development</span>
           <h3>Designed here. Built on open foundations.</h3>
           <p class="sub">A media-center system inspired by XBMC.</p>
           <p>Alongside the daily reel, the founder is building a media-center system of his own design — his configuration and his library standards throughout — on an open-source platform foundation. The inspiration is XBMC. The goal is library-grade organization, with games, video, TV, and music each kept to one standard.</p>
