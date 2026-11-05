@@ -1,14 +1,14 @@
 {
   "files": {
-    "index.html": "3cf76ecf02fe6ba12161e1333278ebb8c28aa41fb708bdfe5610e7276d951cb9",
-    "pps/catalog.json": "11b1e6fedee5ac9d1d1ddb41caf6ce76ab3175736a67fbc05904aae8af2d89f1",
-    "pps/objects/f1d4cef4eef13e1a4af0abfcf53057d9d31a6a06e186525650f5e9d7ea6ff585.json": "f1d4cef4eef13e1a4af0abfcf53057d9d31a6a06e186525650f5e9d7ea6ff585"
+    "index.html": "b368dc7f4b5c668f41d6bf7e748475a2744c788e3e0d3028b64627c1d1cd75a9",
+    "pps/catalog.json": "15962eabf965862a97e81589a1539d903205b1fb52efc6687b2b10333212cb10",
+    "pps/objects/adfa4ba215c1d3945f755e95fb850b1aa6a89908b43599f4d4f03b654ae27f79.json": "adfa4ba215c1d3945f755e95fb850b1aa6a89908b43599f4d4f03b654ae27f79"
   },
   "format": "hope-page-record/1",
-  "issued_at": "2026-11-03T08:18:25Z",
+  "issued_at": "2026-11-05T17:14:07Z",
   "page_id": "media",
-  "predecessor_sha256": null,
-  "sequence": 1,
-  "signature": "KlcgIYxk985LTbh51vg6ARG9oCrSNSFvmuFIxXufJlU1mvslu/UILdAFaQqlL7BLr8rClEzD5QHO1wCSO48jDg==",
+  "predecessor_sha256": "ad0a448b1b513534ca86345ca21df63eae6c439f92dbfbe80875f5fe8a271f58",
+  "sequence": 2,
+  "signature": "/nmiKjsLYNKcazebEz9KGA5bnjI+98QVw86MfGh9H9Ldx2Jqt0HcmMY1c9zZZ5e1XkOgS/j+NalbNt5jXEEGCQ==",
   "signer": "hub-ed25519-2026-11"
 }
